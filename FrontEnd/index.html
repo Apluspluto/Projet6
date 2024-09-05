@@ -9,15 +9,18 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script src="https://kit.fontawesome.com/bb9207dd24.js" crossorigin="anonymous"></script>
+	<script src="index.js" defer> </script>
 </head>
 <body>
+<div><p class="ModeEdition"><i class="fa-regular fa-pen-to-square"></i>Mode édition</p></div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li>login</li>
+			<li><a class="lien" href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -35,52 +38,14 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
-		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
+		<div class="containerModifier">
+			<h2>Mes Projets</h2>
+			<a class="admin" href="#"><i class="fa-regular fa-pen-to-square" ></i>Modifié</a>
+	    </div>
+		<div class="filters">
+			<button class="Btn" id="0"> Tous </button>
+	    </div>
+			<div class="gallery">
 		</div>
 	</section>
 	<section id="contact">
@@ -98,12 +63,42 @@
 	</section>
 </main>
 
-<footer>
+<footer class="Fond-footer-accueil">
 	<nav>
 		<ul>
 			<li>Mentions Légales</li>
 		</ul>
 	</nav>
 </footer>
+<div class="containerModal">
+	<div class="modalWorks">
+		<span><i class="fa-solid fa-xmark"></i></span>
+		<h2>Galerie photo</h2>
+	 <div class="worksModal"></div>
+	 	<button>Ajouter une photo</button>
+    </div>
+	<div class="AjoutPhoto">
+		<div class="header-icons">
+			<span><i class="fa-solid fa-arrow-left"></i></span>
+			<span><i class="fa-solid fa-xmark"></i></span>
+	    </div>
+		<h2>Ajout photo</h2>
+		<form>
+			<div class="containerFile">
+				<span><i class="fa-regular fa-image"></i></span>
+				<label for="file">+ Ajouter photo</label>
+				<input type="file" id="file" name="image">
+				<img src="#" alt="Aperçu de l'image"></img>
+				<p>jpg, png : 4mo max</p>
+			</div>
+			<label for="title">Titre</label>
+			<input type="text" id="title" name="title">
+			<label for="category">Catégorie</label>
+			<select name="category" id="category"></select>
+			<p class="Bord"></p>
+			<button class="button" disabled>Valider</button>
+		</form>
+	</div>
+</div>
 </body>
 </html>

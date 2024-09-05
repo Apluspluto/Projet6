@@ -52,6 +52,7 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #F5F5DC;
 }
 header {
 	display: flex;
@@ -183,6 +184,358 @@ input[type="submit"]{
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
 }
 
+/* Footer Modif */
+
+.Fond-footer-accueil {
+	background-color: white;
+	padding: 5px;
+}
+
+.Fond-footer-login {
+	background-color: white;
+	padding: 5px;
+	margin-top: 14em;
+}
+
+nav li {
+font-family: "Work Sans";
+font-size: 14px;
+font-weight: 300;
+line-height: 16.42px;
+text-align: left;
+
+}
+
+/** Le style du login de ma page index **/
+
+.lien {
+		text-decoration: none; /* Enlève le soulignement */
+		color: inherit;        /* Utilise la couleur du texte du parent */
+}
+
+/** Login style de ma page login **/
+
+.log {
+	font-weight: bold;
+}
+
+/*** Filtre page ***/
+
+.filters {
+	display: flex;
+	justify-content: center;
+}
+
+/*** bouton ***/
+
+.Btn {
+	font-family: 'Syne'; 
+	color: #1D6154; 
+	font-weight: 700;
+	font-size: 20px;
+	background-color: #F5F5DC;
+    padding: 10px 25px;
+	margin: 10px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	border: solid #1D6154;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.Btn:focus {
+	color: white;
+	background-color: #1D6154;
+}
+
+.Error {
+	color: red;
+}
+
+.admin {
+	display: none;
+	text-decoration: none; 
+	color: inherit;
+	padding: 10px;
+	padding-left: 40px;
+}
+
+.ModeEdition {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+	width: 100%;
+	height: 60px;
+	color: white;
+}
+
+body > div .fa-pen-to-square {
+	padding: 10px;
+}
+
+.containerModifier {
+	display: flex;
+	justify-content: center;
+}
+
+a .fa-pen-to-square {
+	padding-right: 10px;
+}
+
+.MdpOublie {
+	display: flex;
+	justify-content: center;
+	color: #000;
+}
+
+.containerModal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.432);
+    z-index: 1000; /* Assure que la modal est au-dessus des autres éléments */
+}
+
+.modalWorks {
+    background-color: white;
+    width: 50%;
+    max-width: 500px; /* Limite la largeur maximale de la modal */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'effet de profondeur */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalWorks span {
+    align-self: flex-end;
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+}
+
+.modalWorks h2 {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	font-size: 30px;
+	color: black;
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.modalWorks button {
+    padding: 10px 20px;
+    background-color: #1D6154; /* Couleur de fond*/
+	font-family: 'Syne';
+    color: white;
+	width: 50%;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.worksModal {
+    width: 100%;
+    height: 100%; /* Utilisez toute la hauteur disponible */
+    border-bottom: 1px solid #ddd; /* Bordure légère */
+    padding: 10px; /* Espacement intérieur */
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+    gap: 10px; /* Espacement entre les éléments */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+	margin-bottom: 20px;
+}
+
+.worksModal figure {
+    margin: 0; /* Supprime la marge par défaut des éléments figure */
+    width: calc(25% - 10px); /* Ajuste la largeur pour quatre images par ligne avec un espacement entre elles */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+    position: relative; /* Positionne le contenu du trash en absolu par rapport à l'image */
+}
+
+.worksModal img {
+    width: 100%; /* L'image prend toute la largeur du conteneur figure */
+    height: auto; /* Maintient les proportions de l'image */
+    border-radius: 5px; /* Coins arrondis pour les images */
+    display: block; /* Supprime l'espace blanc sous les images */
+    object-fit: cover; /* Ajuste l'image pour couvrir le conteneur sans déformation */
+}
+
+.worksModal span {
+    position: absolute; /* Positionne le bouton de suppression en haut à droite de l'image */
+    top: 10px; /* Espacement du haut */
+    right: 10px; /* Espacement de la droite */
+    background-color: #000; /* Fond noir */
+    border-radius: 4px; /* Coins légèrement arrondis */
+    padding: 5px; /* Espacement intérieur du bouton */
+    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    display: flex; /* Permet de centrer l'icône à l'intérieur du span */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+}
+
+.worksModal i {
+    color: white; /* Couleur de l'icône */
+    font-size: 18px; /* Taille de l'icône */
+}
+
+/* Style global pour le formulaire */
+.AjoutPhoto {
+	display: none;
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 50px;
+	padding-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Style du container pour l'ajout de fichier */
+.containerFile {
+	background-color: #E8F1F6;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Icône d'image dans le container */
+.containerFile span {
+    font-size: 30px;
+    color: #888;
+}
+
+/* Style du label pour l'ajout de photo */
+.containerFile label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Style du champ de fichier caché */
+.containerFile input[type="file"] {
+    display: none;
+}
+
+/* Style de l'aperçu de l'image */
+.containerFile img {
+    display: none;
+    max-width: 100%;
+	height: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Style des instructions sur le format et la taille */
+.containerFile p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.containerFile .fa-image {
+	font-size: 4rem;
+	color: #B9C5CC;
+}
+
+/* Style des labels et inputs */
+.AjoutPhoto label {
+    display: block;
+    margin-bottom: 5px;
+    color: #444444;
+}
+
+/* Modif +ajout photo */
+.AjoutPhoto label[for="file"] {
+	border-radius: 20px;
+	background-color: #CBD6DC;
+	color: #306685;
+	width: 50%;
+	position: relative;
+	left: 80px;
+	padding: 10px;
+}
+
+.AjoutPhoto input[type="text"] {
+    width: 95%;
+    padding: 10px;
+	font-weight: 500;
+    margin-bottom: 15px;
+    border: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    font-size: 14px;
+}
+.AjoutPhoto select {
+	width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    font-size: 14px;
+}
+
+/* Style du bouton d'ajout */
+.AjoutPhoto .button {
+    width: 50%;
+	position: relative;
+	left: 25%;
+    padding: 10px;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+	margin-top: 20px;
+
+}
+
+.AjoutPhoto .validation {
+	background-color: #1D6154;
+}
+
+.AjoutPhoto h2 {
+	font-family: 'Work Sans';
+	font-weight: 400;
+	font-size: 30px;
+	color: black;
+    margin-bottom: 20px; /* Espacement sous le titre */
+	display: flex;
+	justify-content: center;
+	margin-top: -1pc;
+}
+
+.Bord {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid grey;
+}
+
+/* Conteneur pour les icônes de navigation */
+.header-icons {
+    display: flex;
+    justify-content: space-between; /* Place la flèche à gauche et la croix à droite */
+    align-items: center;
+    margin-bottom: 40px; /* Espacement sous les icônes */
+}
+
+/* Style des icônes de navigation (flèche gauche et croix) */
+.header-icons span {
+	position: relative;
+	left: 20px 60px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
