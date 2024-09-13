@@ -82,6 +82,8 @@ const containerModal = document.querySelector(".containerModal");
 const croix = document.querySelector(".containerModal .fa-xmark");
 const worksModal = document.querySelector(".worksModal");
 const ModeEdition = document.querySelector("body .ModeEdition");
+const titre = document.getElementById("title");
+const FileInput = document.querySelector(".containerFile input");
 
 if (loged) {
     ModeEdition.style.display = "flex";
@@ -93,8 +95,19 @@ if (loged) {
 }
 
 //Affichage de la modal au click sur mode édition
+const previewIMG = document.querySelector(".AjoutPhoto img");
+const inputFile = document.querySelector(".containerFile input");
+const labelFile = document.querySelector(".containerFile label");
+const iconeFile = document.querySelector(".containerFile .fa-image");
+const pFile = document.querySelector(".containerFile p")
 
 admin.addEventListener("click", () => {
+    titre.value = "";
+    previewIMG.src = "";
+    previewIMG.style.display = "none"
+    labelFile.style.display = "block"
+    iconeFile.style.display = "block"
+    pFile.style.display = "block"
    containerModal.style.display = "flex";
 });
 
@@ -182,6 +195,7 @@ function deletePhoto() {
         });
     });
 }
+deletePhoto()
 
 //Faire apparaitre la deuxieme modal une fois le html finit 
 const btnAjoutModal = document.querySelector(".modalWorks button");
@@ -207,11 +221,6 @@ function displayAjoutPhoto() {
 displayAjoutPhoto()
 
 // Faire la prévisualisation de l'image, variables
-const previewIMG = document.querySelector(".AjoutPhoto img");
-const inputFile = document.querySelector(".containerFile input");
-const labelFile = document.querySelector(".containerFile label");
-const iconeFile = document.querySelector(".containerFile .fa-image");
-const pFile = document.querySelector(".containerFile p")
 let file = null;
 
 // Ecouter les changements sur l'input file 
@@ -304,6 +313,7 @@ form.addEventListener("submit", async (e) => {
         console.error('Error:', error);
     }
 });
+
 //Function verification input rempli 
 function verification() {
     const buttonValidation = document.querySelector(".AjoutPhoto button");
