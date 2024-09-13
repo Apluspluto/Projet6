@@ -47,13 +47,18 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
-body {
+
+.container-body {
 	max-width: 1140px;
-	margin:auto;
-	font-family: 'Work Sans' ;
-	font-size: 14px;
+    margin: auto;
+    font-family: 'Work Sans';
+    font-size: 14px;
+}
+
+body {
 	background-color: #F5F5DC;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -191,13 +196,13 @@ footer nav ul {
 
 .Fond-footer-accueil {
 	background-color: white;
-	padding: 5px;
+	padding: 2px;
 }
 
 .Fond-footer-login {
 	background-color: white;
 	padding: 5px;
-	margin-top: 14em;
+	margin-top: 20em;
 }
 
 nav li {
@@ -273,9 +278,10 @@ text-align: left;
 	color: white;
 }
 
-body > div .fa-pen-to-square {
-	padding: 10px;
+.ModeEdition .fa-pen-to-square {
+	padding-right: 10px;
 }
+
 
 .containerModifier {
 	display: flex;
