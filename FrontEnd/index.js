@@ -1,4 +1,4 @@
-//Variables 
+// Variables 
 const DivGallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters")
 
@@ -8,19 +8,8 @@ async function Works() {
     return await reponse.json();
 }
 
-Works();
-
-// Affichage des works dans le dom 
-async function AffichageWorks() {
-    const arrayWorks = await Works();
-    arrayWorks.forEach(arrayWorks => {
-      creationWorks(arrayWorks);
-    });
-  }
-  AffichageWorks();
-
-//Création des works
-  function creationWorks(Works) {
+// Création des works
+function creationWorks(Works) {
     const figure = document.createElement("figure");
     const img = document.createElement("img");
     const figcaption = document.createElement("figcaption");
@@ -30,14 +19,23 @@ async function AffichageWorks() {
     figure.appendChild(figcaption);
     DivGallery.appendChild(figure);
   }
+
+// Affichage des works dans le dom 
+async function AffichageWorks() {
+    const arrayWorks = await Works();
+    arrayWorks.forEach(arrayWorks => {
+      creationWorks(arrayWorks);
+    });
+  }
+  AffichageWorks();
                             
-// Récupération des catégories et création des boutons 
+// Récupération des catégories 
 async function categories() {
     const reponse = await fetch("http://localhost:5678/api/categories")
     return await reponse.json();
 } 
-categories()
 
+// Création des boutons 
 async function categoriesBoutons() {
     const cate = await categories();
     cate.forEach(categorie => {
@@ -74,9 +72,9 @@ async function Filtrage(){
 }
 Filtrage()
 
-// Si l'utilisateur est connecté 
+// Variables
 const loged = window.sessionStorage.getItem('loged');
-const admin = document.querySelector(".containerModifier .admin");
+const modifie = document.querySelector(".containerModifier .modifie");
 const logout = document.querySelector("header nav .lien");
 const containerModal = document.querySelector(".containerModal");
 const croix = document.querySelector(".containerModal .fa-xmark");
@@ -85,23 +83,25 @@ const ModeEdition = document.querySelector("body .ModeEdition");
 const titre = document.getElementById("title");
 const FileInput = document.querySelector(".containerFile input");
 
+// Affichage une fois connecté
 if (loged) {
     ModeEdition.style.display = "flex";
-    admin.style.display = "flex";
+    modifie.style.display = "flex";
     logout.textContent = "logout";
     logout.addEventListener("click", () => {
     window.sessionStorage.removeItem('loged')
     })
 }
 
-//Affichage de la modal au click sur mode édition
+// Variables
 const previewIMG = document.querySelector(".AjoutPhoto img");
 const inputFile = document.querySelector(".containerFile input");
 const labelFile = document.querySelector(".containerFile label");
 const iconeFile = document.querySelector(".containerFile .fa-image");
 const pFile = document.querySelector(".containerFile p")
 
-admin.addEventListener("click", () => {
+// Affichage de la modal au click sur modifié
+modifie.addEventListener("click", () => {
     titre.value = "";
     previewIMG.src = "";
     previewIMG.style.display = "none"
@@ -111,8 +111,7 @@ admin.addEventListener("click", () => {
    containerModal.style.display = "flex";
 });
 
-//Fermeture de la modal au click sur la croix
-
+// Fermeture de la modal au click sur la croix
 croix.addEventListener("click", () => {
     containerModal.style.display = "none";
 });
@@ -124,7 +123,7 @@ containerModal.addEventListener("click", (e) => {
     }
 })
 
-//Affichage des photos dans div worksmodal qui correspond à la galerie
+// Affichage des photos worksmodal 
 async function displayPhotoModal() {
     worksModal.innerHTML="";
     const works = await Works();
@@ -173,11 +172,11 @@ function deletePhoto() {
                     return;
                 }
 
-                // Si le serveur ne renvoie pas de contenu (code 204 No Content)
+                // Si le serveur ne renvoie pas de contenu 
                 if (response.status === 204 || response.headers.get('content-length') === '0') {
                     console.log("La suppression a réussi, aucune réponse à analyser.");
                 } else {
-                    // Sinon, traiter le JSON (au cas où il y aurait un contenu)
+                    // Sinon, traiter le JSON 
                     const data = await response.json();
                     console.log("La suppression a réussi, voici les données :", data);
                 }
@@ -197,7 +196,7 @@ function deletePhoto() {
 }
 deletePhoto()
 
-//Faire apparaitre la deuxieme modal une fois le html finit 
+//Faire apparaitre la deuxieme modal 
 const btnAjoutModal = document.querySelector(".modalWorks button");
 const ModalAjoutPhoto = document.querySelector(".AjoutPhoto");
 const ModalWorks = document.querySelector(".modalWorks");
@@ -220,7 +219,7 @@ function displayAjoutPhoto() {
 }
 displayAjoutPhoto()
 
-// Faire la prévisualisation de l'image, variables
+// Faire la prévisualisation de l'image
 let file = null;
 
 // Ecouter les changements sur l'input file 
@@ -294,7 +293,7 @@ form.addEventListener("submit", async (e) => {
         const result = await response.json();
         
         // Vider la galerie avant de réafficher toutes les œuvres
-        DivGallery.innerHTML = ""; // Ajoutez cette ligne pour éviter les doublons
+        DivGallery.innerHTML = ""; // Pour éviter les doublons
 
         // Recharger la galerie et la modal après l'ajout
         await displayPhotoModal(); // Actualise les photos dans la modal

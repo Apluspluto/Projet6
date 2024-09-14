@@ -13,10 +13,12 @@
 	<script src="index.js" defer> </script>
 </head>
 <body>
+<!-- Le mode édition qui apparait au-dessus du header quand je suis connecté -->
 <div class="ModeEdition">
 	<i class="fa-regular fa-pen-to-square"></i>
 	<p>Mode édition</p>
 </div>
+ <!-- Conteneur principal qui englobe tout le contenu de la page -->
 	<div class="container-body">
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -24,6 +26,7 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
+			 <!-- Ajout d'un lien pour aller vers la page login -->
 			<li><a class="lien" href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
@@ -44,13 +47,16 @@
 	<section id="portfolio">
 		<div class="containerModifier">
 			<h2>Mes Projets</h2>
-			<a class="admin" href="#"><i class="fa-regular fa-pen-to-square" ></i>Modifié</a>
+		<!-- Le "modifié" qui apparait au-dessus de mes projets quand je suis connecté -->
+			<a class="modifie" href="#"><i class="fa-regular fa-pen-to-square" ></i>Modifié</a>
 	    </div>
+		<!-- Ajout du bouton de base pour afficher les projets par défauts -->
 		<div class="filters">
 			<button class="Btn" id="0"> Tous </button>
-	    </div>
+	   	</div>
+		<!-- Ajout des works avec le JS -->
 			<div class="gallery">
-		</div>
+		    </div>
 	</section>
 	<section id="contact">
 		<h2>Contact</h2>
@@ -66,14 +72,16 @@
 		</form>
 	</section>
 </main>
-
+<!-- Conteneur des deux modales : galerie et ajout de photo -->
 <div class="containerModal">
+	<!-- Ajout de ma premiere modale -->
 	<div class="modalWorks">
 		<span><i class="fa-solid fa-xmark"></i></span>
 		<h2>Galerie photo</h2>
 	 <div class="worksModal"></div>
 	 	<button>Ajouter une photo</button>
     </div>
+	<!-- Ajout de la seconde modale -->
 	<div class="AjoutPhoto">
 		<div class="header-icons">
 			<span><i class="fa-solid fa-arrow-left"></i></span>
@@ -85,7 +93,7 @@
 				<span><i class="fa-regular fa-image"></i></span>
 				<label for="file">+ Ajouter photo</label>
 				<input type="file" id="file" name="image">
-				<img src="#" alt="Aperçu de l'image"></img>
+				<img src="#" alt="Aperçu de l'image">
 				<p>jpg, png : 4mo max</p>
 			</div>
 			<label for="title">Titre</label>
@@ -98,6 +106,7 @@
 	</div>
   </div>
 </div>  
+<!-- Changement du Footer avec l'ajout d'une class -->
 <footer class="Fond-footer-accueil">
 	<nav>
 		<ul>

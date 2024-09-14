@@ -192,19 +192,6 @@ footer nav ul {
 	margin: 2em;
 }
 
-/* Footer Modif */
-
-.Fond-footer-accueil {
-	background-color: white;
-	padding: 2px;
-}
-
-.Fond-footer-login {
-	background-color: white;
-	padding: 5px;
-	margin-top: 20em;
-}
-
 nav li {
 font-family: "Work Sans";
 font-size: 14px;
@@ -214,31 +201,46 @@ text-align: left;
 
 }
 
-/** Le style du login de ma page index **/
+/*** Footer Modification accueil ***/
 
-.lien {
-		text-decoration: none; /* Enlève le soulignement */
-		color: inherit;        /* Utilise la couleur du texte du parent */
+.Fond-footer-accueil {
+	background-color: white;
+	padding: 2px;
 }
 
-/** Login style de ma page login **/
+/*** Footer Modification login ***/
+
+.Fond-footer-login {
+	background-color: white;
+	padding: 5px;
+	margin-top: 20em;
+}
+
+/*** Style pour les liens de la page index et login ***/
+
+.lien {
+	text-decoration: none;
+	color: inherit;
+}
+
+/*** Style pour le texte du login de la page login ***/
 
 .log {
 	font-weight: bold;
 }
 
-/*** Filtre page ***/
+/*** Conteneur pour les filtres ***/
 
 .filters {
 	display: flex;
 	justify-content: center;
 }
 
-/*** bouton ***/
+/*** Style pour les boutons ***/
 
 .Btn {
-	font-family: 'Syne'; 
-	color: #1D6154; 
+	font-family: 'Syne';
+	color: #1D6154;
 	font-weight: 700;
 	font-size: 20px;
 	background-color: #F5F5DC;
@@ -251,22 +253,30 @@ text-align: left;
     cursor: pointer;
 }
 
+/*** Style du bouton en au clique ***/
+
 .Btn:focus {
 	color: white;
 	background-color: #1D6154;
 }
 
+/*** Style pour le message d'erreur ***/
+
 .Error {
 	color: red;
 }
 
-.admin {
+/*** Conteneur admin ***/
+
+.modifie {
 	display: none;
-	text-decoration: none; 
+	text-decoration: none;
 	color: inherit;
 	padding: 10px;
 	padding-left: 40px;
 }
+
+/*** Mode édition  ***/
 
 .ModeEdition {
 	display: none;
@@ -278,25 +288,34 @@ text-align: left;
 	color: white;
 }
 
+/*** Style pour l'icône crayon dans le mode édition ***/
+
 .ModeEdition .fa-pen-to-square {
 	padding-right: 10px;
 }
 
+/*** Conteneur pour l'icône de modification ***/
 
 .containerModifier {
 	display: flex;
 	justify-content: center;
 }
 
+/*** Style pour l'icône de modification à l'intérieur d'un lien ***/
+
 a .fa-pen-to-square {
 	padding-right: 10px;
 }
+
+/*** lien "Mot de passe oublié" ***/
 
 .MdpOublie {
 	display: flex;
 	justify-content: center;
 	color: #000;
 }
+
+/*** Conteneur pour la modal ***/
 
 .containerModal {
     display: none;
@@ -308,37 +327,45 @@ a .fa-pen-to-square {
     width: 100%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0.432);
-    z-index: 1000; /* Assure que la modal est au-dessus des autres éléments */
+    z-index: 1000;
 }
+
+/*** Style interne de la modal ***/
 
 .modalWorks {
     background-color: white;
     width: 50%;
-    max-width: 500px; /* Limite la largeur maximale de la modal */
+    max-width: 500px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'effet de profondeur */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/*** Fermeture de la modal avec la croix ***/
+
 .modalWorks span {
     align-self: flex-end;
-    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
+    cursor: pointer;
 }
+
+/*** Titre de la modal ***/
 
 .modalWorks h2 {
 	font-family: 'Work Sans';
 	font-weight: 400;
 	font-size: 30px;
 	color: black;
-    margin-bottom: 20px; /* Espacement sous le titre */
+    margin-bottom: 20px;
 }
+
+/*** Bouton dans la modal ***/
 
 .modalWorks button {
     padding: 10px 20px;
-    background-color: #1D6154; /* Couleur de fond*/
+    background-color: #1D6154;
 	font-family: 'Syne';
     color: white;
 	width: 50%;
@@ -347,52 +374,63 @@ a .fa-pen-to-square {
     cursor: pointer;
 }
 
+/*** Conteneur pour les travaux dans la modal ***/
+
 .worksModal {
     width: 100%;
-    height: 100%; /* Utilisez toute la hauteur disponible */
-    border-bottom: 1px solid #ddd; /* Bordure légère */
-    padding: 10px; /* Espacement intérieur */
+    height: 100%;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
-    gap: 10px; /* Espacement entre les éléments */
-    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
 	margin-bottom: 20px;
 }
 
+/*** Conteneur pour chaque élément de travail ***/
+
 .worksModal figure {
-    margin: 0; /* Supprime la marge par défaut des éléments figure */
-    width: calc(25% - 10px); /* Ajuste la largeur pour quatre images par ligne avec un espacement entre elles */
-    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
-    position: relative; /* Positionne le contenu du trash en absolu par rapport à l'image */
+    margin: 0;
+    width: calc(25% - 10px);
+    box-sizing: border-box;
+    position: relative;
 }
+
+/*** Style des images dans la modal ***/
 
 .worksModal img {
-    width: 100%; /* L'image prend toute la largeur du conteneur figure */
-    height: auto; /* Maintient les proportions de l'image */
-    border-radius: 5px; /* Coins arrondis pour les images */
-    display: block; /* Supprime l'espace blanc sous les images */
-    object-fit: cover; /* Ajuste l'image pour couvrir le conteneur sans déformation */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    object-fit: cover;
 }
+
+/*** Icone de suppression de l'image ***/
 
 .worksModal span {
-    position: absolute; /* Positionne le bouton de suppression en haut à droite de l'image */
-    top: 10px; /* Espacement du haut */
-    right: 10px; /* Espacement de la droite */
-    background-color: #000; /* Fond noir */
-    border-radius: 4px; /* Coins légèrement arrondis */
-    padding: 5px; /* Espacement intérieur du bouton */
-    cursor: pointer; /* Change le curseur pour indiquer que l'élément est cliquable */
-    display: flex; /* Permet de centrer l'icône à l'intérieur du span */
-    align-items: center; /* Centre verticalement */
-    justify-content: center; /* Centre horizontalement */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/*** Style de l'icône dans le bouton de suppression ***/
 
 .worksModal i {
-    color: white; /* Couleur de l'icône */
-    font-size: 18px; /* Taille de l'icône */
+    color: white;
+    font-size: 18px;
 }
 
-/* Style global pour le formulaire */
+/*** Formulaire d'ajout de photo ***/
+
 .AjoutPhoto {
 	display: none;
     width: 400px;
@@ -405,9 +443,8 @@ a .fa-pen-to-square {
     font-family: Arial, sans-serif;
 }
 
+/*** Conteneur pour l'ajout de fichier (icône et label) ***/
 
-
-/* Style du container pour l'ajout de fichier */
 .containerFile {
 	background-color: #E8F1F6;
     text-align: center;
@@ -416,13 +453,15 @@ a .fa-pen-to-square {
     position: relative;
 }
 
-/* Icône d'image dans le container */
+/*** Icône d'image dans le conteneur ***/
+
 .containerFile span {
     font-size: 30px;
     color: #888;
 }
 
-/* Style du label pour l'ajout de photo */
+/*** Style du label pour l'ajout de photo ***/
+
 .containerFile label {
     display: block;
     margin-top: 10px;
@@ -431,12 +470,14 @@ a .fa-pen-to-square {
     cursor: pointer;
 }
 
-/* Style du champ de fichier caché */
+/*** Champ de fichier caché ***/
+
 .containerFile input[type="file"] {
     display: none;
 }
 
-/* Style de l'aperçu de l'image */
+/*** Style de l'aperçu de l'image ajoutée ***/
+
 .containerFile img {
     display: none;
     max-width: 100%;
@@ -445,25 +486,30 @@ a .fa-pen-to-square {
     border-radius: 8px;
 }
 
-/* Style des instructions sur le format et la taille */
+/*** Instructions sur le format et la taille du fichier ***/
+
 .containerFile p {
     margin-top: 10px;
     font-size: 12px;
 }
 
+/*** Icône fa-image ***/
+
 .containerFile .fa-image {
-	font-size: 4rem;
-	color: #B9C5CC;
+    font-size: 4rem; 
+    color: #B9C5CC; 
 }
 
-/* Style des labels et inputs */
+/*** Style des labels et inputs dans le formulaire d'ajout ***/
+
 .AjoutPhoto label {
     display: block;
     margin-bottom: 5px;
     color: #444444;
 }
 
-/* Modif +ajout photo */
+/*** Style du label pour l'ajout de photo (pour le champ fichier) ***/
+
 .AjoutPhoto label[for="file"] {
 	border-radius: 20px;
 	background-color: #CBD6DC;
@@ -474,6 +520,8 @@ a .fa-pen-to-square {
 	padding: 10px;
 }
 
+/*** Style du champ texte dans le formulaire d'ajout ***/
+
 .AjoutPhoto input[type="text"] {
     width: 95%;
     padding: 10px;
@@ -483,6 +531,9 @@ a .fa-pen-to-square {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
     font-size: 14px;
 }
+
+/*** Style de la liste déroulante dans le formulaire d'ajout ***/
+
 .AjoutPhoto select {
 	width: 100%;
     padding: 10px;
@@ -492,7 +543,8 @@ a .fa-pen-to-square {
     font-size: 14px;
 }
 
-/* Style du bouton d'ajout */
+/*** Style du bouton d'ajout ***/
+
 .AjoutPhoto .button {
     width: 50%;
 	position: relative;
@@ -505,23 +557,28 @@ a .fa-pen-to-square {
     font-size: 16px;
     cursor: pointer;
 	margin-top: 20px;
-
 }
+
+/*** Style du bouton de validation dans le formulaire ***/
 
 .AjoutPhoto .validation {
 	background-color: #1D6154;
 }
+
+/*** Titre du formulaire d'ajout de photo ***/
 
 .AjoutPhoto h2 {
 	font-family: 'Work Sans';
 	font-weight: 400;
 	font-size: 30px;
 	color: black;
-    margin-bottom: 20px; /* Espacement sous le titre */
+    margin-bottom: 20px;
 	display: flex;
 	justify-content: center;
 	margin-top: -1pc;
 }
+
+/*** Style de la bordure séparatrice ***/
 
 .Bord {
 	margin-top: 20px;
@@ -529,19 +586,18 @@ a .fa-pen-to-square {
 	border-bottom: 1px solid grey;
 }
 
-/* Conteneur pour les icônes de navigation */
+/*** Conteneur pour les icônes de navigation dans le header ***/
+
 .header-icons {
     display: flex;
-    justify-content: space-between; /* Place la flèche à gauche et la croix à droite */
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px; /* Espacement sous les icônes */
+    margin-bottom: 40px;
 }
 
-/* Style des icônes de navigation (flèche gauche et croix) */
+/*** Style des icônes de navigation (flèche gauche et croix) ***/
+
 .header-icons span {
 	position: relative;
 	left: 20px 60px;
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
 }
