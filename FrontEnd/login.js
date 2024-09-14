@@ -34,8 +34,7 @@ async function Users(emailValue, passwordValue) {
     }
 }
 
-// Fonction de connexion
-async function login() {
+// Connexion
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
@@ -55,8 +54,5 @@ async function login() {
         } else {
         }
     });
-}
 
-// Appel de la fonction de connexion
-login();
 
