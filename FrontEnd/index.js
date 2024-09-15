@@ -73,7 +73,7 @@ async function Filtrage(){
 Filtrage()
 
 // Variables
-const loged = window.sessionStorage.getItem('loged');
+const loged = window.localStorage.getItem('loged');
 const modifie = document.querySelector(".containerModifier .modifie");
 const logout = document.querySelector("header nav .lien");
 const containerModal = document.querySelector(".containerModal");
@@ -89,7 +89,7 @@ if (loged) {
     modifie.style.display = "flex";
     logout.textContent = "logout";
     logout.addEventListener("click", () => {
-    window.sessionStorage.removeItem('loged')
+    window.localStorage.removeItem('loged')
     })
 }
 
@@ -151,18 +151,17 @@ function deletePhoto() {
         trash.addEventListener("click", async (e) => {
             e.preventDefault();
             const id = trash.id;
-            const token = window.sessionStorage.getItem('loged'); // Récupère le token de session
-            
-            const init = {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}` // Ajoute le token d'authentification
-                }
-            };
+            const token = window.localStorage.getItem('loged'); // Récupère le token 
 
             try {
-                const response = await fetch(`http://localhost:5678/api/works/${id}`, init);
+                
+                const response = await fetch(`http://localhost:5678/api/works/${id}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
                 
                 // Vérifie si la suppression a échoué
                 if (!response.ok) {
@@ -261,8 +260,8 @@ const category = document.querySelector(".AjoutPhoto #category");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Récupérer le token depuis sessionStorage
-    const token = window.sessionStorage.getItem('loged');
+    // Récupérer le token depuis localStorage
+    const token = window.localStorage.getItem('loged');
     if (!token) {
         console.error('Token is missing or invalid');
         return; // Arrêter le traitement si le token est manquant

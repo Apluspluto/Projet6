@@ -47,12 +47,11 @@ async function Users(emailValue, passwordValue) {
 
         if (mailValeur && userData.token) {
             // Si la connexion est réussie
-            window.sessionStorage.setItem('loged', userData.token);
+            window.localStorage.setItem('loged', userData.token);
 
             // Rediriger vers la page d'accueil ou dashboard
-             window.location.href = "index.html";
-        } else {
-        }
+            window.location.href = "index.html";
+        } 
     });
 
 
