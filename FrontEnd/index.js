@@ -154,7 +154,6 @@ function deletePhoto() {
             const token = window.localStorage.getItem('loged'); // Récupère le token 
 
             try {
-                
                 const response = await fetch(`http://localhost:5678/api/works/${id}`, {
                     method: "DELETE",
                     headers: {
@@ -162,7 +161,7 @@ function deletePhoto() {
                         "Authorization": `Bearer ${token}`
                     }
                 });
-                
+
                 // Vérifie si la suppression a échoué
                 if (!response.ok) {
                     console.log("La suppression a échoué avec le statut :", response.status);
@@ -281,7 +280,7 @@ form.addEventListener("submit", async (e) => {
             method: "POST",
             body: formData,
             headers: {
-                "Authorization": `Bearer ${token}` // Inclure le token
+                "Authorization": `Bearer ${token}` 
             }
         });
 
