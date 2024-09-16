@@ -86,6 +86,7 @@ const FileInput = document.querySelector(".containerFile input");
 // Affichage une fois connecté
 if (loged) {
     ModeEdition.style.display = "flex";
+    filters.style.display = "none";
     modifie.style.display = "flex";
     logout.textContent = "logout";
     logout.addEventListener("click", () => {
